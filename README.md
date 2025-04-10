@@ -1,5 +1,13 @@
 # Azure Data Factory Pipeline Runner
 
+### Page content
+
+* ❗️ Prerequisites
+* 🔎 Pipeline definition
+* 🏃🏽‍♀️ Running the script
+* 💬 Additional information
+
+
 ### ❗️ Prerequisites
 
 The **azure cli*** must be installed on the machine to run the provided script.
