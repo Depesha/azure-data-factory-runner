@@ -1,6 +1,6 @@
 # Azure Data Factory Pipeline Runner
 
-### Prerequisites
+### ❗️ Prerequisites
 
 The **azure cli*** must be installed on the machine to run the provided script.
 
@@ -17,10 +17,7 @@ The **azure cli*** must be installed on the machine to run the provided script.
 <img width="674" alt="image" src="https://github.com/user-attachments/assets/ad844df6-94e1-426a-9625-c04083a9d82d" />
 
 
-
-
-
-### Pipeline definition
+### 🔎 Pipeline definition
 
 To start using the script, the pipeline information must be set in the **run_pipeline.bat**.
 
@@ -37,7 +34,7 @@ Ask the team to provide information for the pipeline:
 ```
 
 
-### Running the script
+### 🏃🏽‍♀️ Running the script
 
 Open the `run_pipeline.bat` file and change the default values to the provided:
 
@@ -48,12 +45,21 @@ Save the changes and run the file.
 Once the file is run:
 1. Log in to the CDW account when the popup window appears;
 2. Select the subscription: The provided subscription has to be selected from the list;
-
-
 3. Await the script ot be finished.
 
+### ⚙️ Running pipeline with parameters
 
-### Additional information
+To run the pipeline with the specified parameters, the next steps have to be taken:
+1. Understand the type and names of the parameters
+> ✅ **Note:** Default values are used if you omit a parameter and it’s defined with a default;
+
+> 💡 **Note:** Nested complex objects aren’t supported beyond flat objects or arrays.
+2. Open the `params.json` file and set the required parameter
+3. Run the application
+> 💡 **Note:** Extra parameters that are not defined in the pipeline will be ignored;
+> no cleanup required to run another pipeline with different parameters.
+
+### 💬 Additional information
 
 To find more information on the pipeline run:
 
