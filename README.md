@@ -10,7 +10,7 @@
 
 ### ❗️ Prerequisites
 
-The **azure cli*** must be installed on the machine to run the provided script.
+The **azure cli** must be installed on the machine to run the provided script.
 
 1. Press Win + R;
 2. Type `cmd`;
