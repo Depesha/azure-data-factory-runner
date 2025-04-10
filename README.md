@@ -37,7 +37,7 @@ Ask the team to provide information for the pipeline:
 ```
   set subscriptionId={subscription-id}
   set resourceGroup={resource-group-name}
-  set factoryName=df-{factory-name}
+  set factoryName={factory-name}
   set pipelineName={pipeline-name}
 ```
 
