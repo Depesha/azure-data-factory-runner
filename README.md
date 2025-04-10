@@ -1,6 +1,6 @@
 # Azure Data Factory Pipeline Runner
 
-### Prerequisites
+### ❗️ Prerequisites
 
 The **azure cli*** must be installed on the machine to run the provided script.
 
@@ -8,12 +8,16 @@ The **azure cli*** must be installed on the machine to run the provided script.
 2. Type `cmnd`;
 3. Type `winget install --id Microsoft.AzureCLI -e`;
 4. Agree on terms;
-5. Type `az version` to verify the Azure CLI installation
-<img width="801" alt="image" src="https://github.com/user-attachments/assets/a79a1ead-c5af-45d7-8d3c-6bcb0d054142" />
+   
+<img width="674" alt="image" src="https://github.com/user-attachments/assets/47e185a1-27c3-4dcf-9f0d-a56488ae5456" />
+
+6. Restart `cmd`
+7. Type `az version` to verify the Azure CLI installation
+   
+<img width="674" alt="image" src="https://github.com/user-attachments/assets/ad844df6-94e1-426a-9625-c04083a9d82d" />
 
 
-
-### Pipeline definition
+### 🔎 Pipeline definition
 
 To start using the script, the pipeline information must be set in the **run_pipeline.bat**.
 
@@ -30,34 +34,39 @@ Ask the team to provide information for the pipeline:
 ```
 
 
-### Runing the script
+### 🏃🏽‍♀️ Running the script
 
 Open the `run_pipeline.bat` file and change the default values to the provided:
-<img width="674" alt="image" src="https://github.com/user-attachments/assets/61ab3525-d573-4e0d-9fbb-52c441a33e81" />
+
+<img width="419" alt="image" src="https://github.com/user-attachments/assets/7f84cbfd-40aa-47e9-98b5-ccbf3f993314" />
 
 Save the changes and run the file.
 
 Once the file is run:
 1. Log in to the CDW account when the popup window appears;
 2. Select the subscription: The provided subscription has to be selected from the list;
-<img width="674" alt="image" src="https://github.com/user-attachments/assets/52ee713b-ee6e-4117-8028-f8dd41565082" />
-
 3. Await the script ot be finished.
 
+### ⚙️ Running pipeline with parameters
 
-### Additional information
+To run the pipeline with the specified parameters, the next steps have to be taken:
+1. Understand the type and names of the parameters
+> ✅ **Note:** Default values are used if you omit a parameter and it’s defined with a default;
+
+> 💡 **Note:** Nested complex objects aren’t supported beyond flat objects or arrays.
+2. Open the `params.json` file and set the required parameter
+3. Run the application
+> 💡 **Note:** Extra parameters that are not defined in the pipeline will be ignored;
+> no cleanup required to run another pipeline with different parameters.
+
+### 💬 Additional information
 
 To find more information on the pipeline run:
 
-1. Log in to the Azure portal: [azure portal]([https://www.example.com](https://portal.azure.com/#home)
-2. Search `data factory` by name:
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/62a07bbd-76fa-4714-8a4e-0e81a9adad04" />
-
-3. Launch studio:
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/69c241d0-3c3b-41d9-b660-c95670e25a38" />
-
-4. Click on `Monitor` and find the pipeline run:
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/2274099d-e796-47a4-b44b-63c814c16926" />
+1. Log in to the Azure portal: [azure portal](https://portal.azure.com/#home)
+2. Search `data factory` by name in search;
+3. Launch Data Factory Studio;
+4. Click on `Monitor` and find the pipeline run;
 
 
 
