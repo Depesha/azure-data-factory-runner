@@ -13,7 +13,7 @@
 The **azure cli*** must be installed on the machine to run the provided script.
 
 1. Press Win + R;
-2. Type `cmnd`;
+2. Type `cmd`;
 3. Type `winget install --id Microsoft.AzureCLI -e`;
 4. Agree on terms;
    
