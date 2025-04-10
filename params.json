@@ -1,0 +1,7 @@
+{
+  "testVariable": "hello",
+  "intVariable": 42,
+  "floatVariable": 3.14,
+  "boolVariable": false,
+  "arrayVariable": ["item1", "item2", "item3"]
+}

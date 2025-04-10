@@ -6,7 +6,7 @@ set subscriptionId={subscription-id}
 
 :: Values to setup before your first run
 set resourceGroup={resource-group-name}
-set factoryName=df-{factory-name}
+set factoryName={factory-name}
 set pipelineName={pipeline-name}
 
 echo Logging into Azure (Subscription: %subscriptionId%)...
@@ -19,7 +19,15 @@ call az extension add --name datafactory
 
 :: Trigger the pipeline and capture the run ID
 echo Triggering pipeline '%pipelineName%'...
-FOR /F "usebackq tokens=*" %%i IN (`az datafactory pipeline create-run --resource-group %resourceGroup% --factory-name %factoryName% --name %pipelineName% --query runId -o tsv`) DO set runId=%%i
+FOR /F "usebackq tokens=*" %%i IN (`
+    az datafactory pipeline create-run ^
+        --resource-group %resourceGroup% ^
+        --factory-name %factoryName% ^
+        --name %pipelineName% ^
+        --query runId ^
+        -o tsv
+        --parameters @params.json
+        `) DO set runId=%%i
 
 :: Display the captured runId
 echo Run ID: %runId%
@@ -28,7 +36,11 @@ echo Run ID: %runId%
 :waitForStatus
 echo Checking run status for run ID: %runId%
 
-call az datafactory pipeline-run show --resource-group %resourceGroup% --factory-name %factoryName% --run-id %runId% --query status -o tsv > status.txt
+call az datafactory pipeline-run show ^
+    --resource-group %resourceGroup% ^
+    --factory-name %factoryName% ^
+    --run-id %runId% ^
+    --query status -o tsv > status.txt
 
 set /p status=<status.txt
 
