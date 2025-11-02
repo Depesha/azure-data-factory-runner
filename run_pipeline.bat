@@ -36,6 +36,8 @@ echo Run ID: %runId%
 :waitForStatus
 echo Checking run status for run ID: %runId%
 
+:: asfsdfsdfksdfksdfj
+
 call az datafactory pipeline-run show ^
     --resource-group %resourceGroup% ^
     --factory-name %factoryName% ^
